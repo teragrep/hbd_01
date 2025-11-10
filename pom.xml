@@ -15,6 +15,13 @@
     <revision>0.0.1</revision>
     <sha1></sha1>
   </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.hbase</groupId>
+      <artifactId>hbase-client</artifactId>
+      <version>${hbase.version}</version>
+    </dependency>
+  </dependencies>
   <build>
     <directory>${project.basedir}/target</directory>
     <finalName>hbd_01</finalName>
@@ -29,21 +36,11 @@
             <id>copy</id>
             <phase>compile</phase>
             <goals>
-              <goal>copy</goal>
+              <goal>copy-dependencies</goal>
             </goals>
           </execution>
         </executions>
         <configuration>
-          <artifactItems>
-            <artifactItem>
-              <groupId>org.apache.hbase</groupId>
-              <artifactId>hbase-client</artifactId>
-              <version>${hbase.version}</version>
-              <type>jar</type>
-              <overWrite>true</overWrite>
-              <outputDirectory>${project.build.directory}/lib</outputDirectory>
-            </artifactItem>
-          </artifactItems>
           <outputDirectory>${project.build.directory}/lib</outputDirectory>
         </configuration>
       </plugin>
