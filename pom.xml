@@ -44,6 +44,20 @@
           <outputDirectory>${project.build.directory}/lib</outputDirectory>
         </configuration>
       </plugin>
+      <!-- Generate THIRD-PARTY.txt -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <version>2.7.0</version>
+        <executions>
+          <execution>
+            <id>create-third-party-txt</id>
+            <goals>
+              <goal>add-third-party</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
       <!-- Rest of the plugins -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -126,6 +140,20 @@
               <sources>
                 <source>
                   <location>${project.basedir}/target/lib/</location>
+                </source>
+              </sources>
+            </mapping>
+            <mapping>
+              <directory>/opt/teragrep/${project.artifactId}/</directory>
+              <directoryIncluded>true</directoryIncluded>
+              <filemode>644</filemode>
+              <dirmode>755</dirmode>
+              <username>root</username>
+              <groupname>root</groupname>
+              <recurseDirectories>true</recurseDirectories>
+              <sources>
+                <source>
+                  <location>${project.basedir}/target/generated-sources/license/THIRD-PARTY.txt</location>
                 </source>
               </sources>
             </mapping>
