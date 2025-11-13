@@ -1,35 +1,17 @@
-// Before publishing your new repository:
-// 1. Write the readme file
-// 2. Update the issues link in Contributing section in the readme file
-// 3. Update the discussion link in config.yml file in .github/ISSUE_TEMPLATE directory
+= HBD_01
 
-= repo-template
+Contains HBase Client Dependencies.
 
-// Add a short description of your project. Tell what your project does and what it's used for.
+== How to use
 
-This is a template repository for Teragrep organization.
+. Install `hbd_01.rpm` on each of the Yarn worker nodes
 
-== Features
+. Set `spark.yarn.jars` to contain `local:/opt/teragrep/hbd_01/lib/*` when submitting application
 
-// List your project's features
-
-== Documentation
-
-See the official documentation on https://docs.teragrep.com[docs.teragrep.com].
-
-== Limitations
-
-// If your project has limitations, please list them. Otherwise remove this section.
-
-== How to [compile/use/implement]
-
-// add instructions how people can start to use your project
 
 == Contributing
 
-// Change the repository name in the issues link to match with your project's name
-
-You can involve yourself with our project by https://github.com/teragrep/repo-template/issues/new/choose[opening an issue] or submitting a pull request.
+You can involve yourself with our project by https://github.com/teragrep/hbd_01/issues/new/choose[opening an issue] or submitting a pull request.
 
 Contribution requirements:
 
